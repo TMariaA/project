@@ -1,7 +1,7 @@
 <?
 $arTemplate = array (
-  'NAME' => '',
-  'DESCRIPTION' => 'home',
+  'NAME' => 'home',
+  'DESCRIPTION' => '',
   'SORT' => '',
   'TYPE' => '',
 );
