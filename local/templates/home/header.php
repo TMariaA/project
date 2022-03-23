@@ -10,22 +10,22 @@ IncludeTemplateLangFile(__FILE__);
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">
     <?
-    $APPLICATION->SetAdditionalCSS("/local/templates/home/fonts/icomoon/style.css");
-    $APPLICATION->SetAdditionalCSS("/local/templates/home/css/bootstrap.min.css");
-    $APPLICATION->SetAdditionalCSS("/local/templates/home/css/magnific-popup.css");
-    $APPLICATION->SetAdditionalCSS("/local/templates/home/css/jquery-ui.css");
-    $APPLICATION->SetAdditionalCSS("/local/templates/home/css/owl.carousel.min.css");
-    $APPLICATION->SetAdditionalCSS("/local/templates/home/css/owl.theme.default.min.css");
-    $APPLICATION->SetAdditionalCSS("/local/templates/home/css/bootstrap-datepicker.css");
-    $APPLICATION->SetAdditionalCSS("/local/templates/home/css/mediaelementplayer.css");
-    $APPLICATION->SetAdditionalCSS("/local/templates/home/css/animate.css");
-    $APPLICATION->SetAdditionalCSS("/local/templates/home/fonts/flaticon/font/flaticon.css");
-    $APPLICATION->SetAdditionalCSS("/local/templates/home/css/fl-bigmug-line.css");
-    $APPLICATION->SetAdditionalCSS("/local/templates/home/css/aos.css");
-    $APPLICATION->SetAdditionalCSS("/local/templates/home/css/style.css");
+    use Bitrix\Main\Page\Asset;
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/fonts/icomoon/style.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/bootstrap.min.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/magnific-popup.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/jquery-ui.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/owl.carousel.min.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/owl.theme.default.min.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/bootstrap-datepicker.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/mediaelementplayer.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/animate.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/fonts/flaticon/font/flaticon.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/fl-bigmug-line.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/aos.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/style.css");
 
     ?>
-    <link href="<?=SITE_TEMPLATE_PATH?>/css/style.css" type="text/css" rel="stylesheet" />
     <title><?$APPLICATION->ShowTitle()?></title>
     <?$APPLICATION->ShowHead();?>
 </head>

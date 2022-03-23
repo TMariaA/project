@@ -65,19 +65,22 @@
 </footer>
 
 </div>
-<?$APPLICATION->AddHeadScript('/local/templates/home/js/jquery-3.3.1.min.js');
-$APPLICATION->AddHeadScript('/local/templates/home/js/jquery-migrate-3.0.1.min.js');
-$APPLICATION->AddHeadScript('/local/templates/home/js/jquery-ui.js');
-$APPLICATION->AddHeadScript('/local/templates/home/js/popper.min.js');
-$APPLICATION->AddHeadScript('/local/templates/home/js/bootstrap.min.js');
-$APPLICATION->AddHeadScript('/local/templates/home/js/owl.carousel.min.js');
-$APPLICATION->AddHeadScript('/local/templates/home/js/mediaelement-and-player.min.js');
-$APPLICATION->AddHeadScript('/local/templates/home/js/jquery.stellar.min.js');
-$APPLICATION->AddHeadScript('/local/templates/home/js/jquery.countdown.min.js');
-$APPLICATION->AddHeadScript('/local/templates/home/js/jquery.magnific-popup.min.js');
-$APPLICATION->AddHeadScript('/local/templates/home/js/bootstrap-datepicker.min.js');
-$APPLICATION->AddHeadScript('/local/templates/home/js/aos.js');
-$APPLICATION->AddHeadScript('/local/templates/home/js/main.js');
+<?
+use Bitrix\Main\Page\Asset;
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-3.3.1.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-migrate-3.0.1.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-ui.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/popper.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/bootstrap.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/owl.carousel.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/mediaelement-and-player.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.stellar.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.countdown.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.magnific-popup.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/bootstrap-datepicker.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/aos.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
+
 ?>
 
 </body>
