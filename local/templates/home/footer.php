@@ -3,15 +3,46 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="mb-5">
-                    <h3 class="footer-heading mb-4">About HomeSpace</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
-                </div>
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:main.include",
+                        ".default",
+                        array(
+                            "AREA_FILE_RECURSIVE" => "Y",
+                            "AREA_FILE_SHOW" => "file",
+                            "PATH" => SITE_TEMPLATE_PATH . "/include/about_footer.php",
+                            "EDIT_TEMPLATE" => "",
+                            "COMPONENT_TEMPLATE" => ".default"
+                        ),
+                        false
+                    ); ?>
 
+                </div>
 
 
             </div>
             <div class="col-lg-4 mb-5 mb-lg-0">
-                <div class="row mb-5">
+                <div class="row mb-5"><? $APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"store_v3_bottom", 
+	array(
+		"ROOT_MENU_TYPE" => "top",
+		"MAX_LEVEL" => "3",
+		"CHILD_MENU_TYPE" => "left",
+		"USE_EXT" => "Y",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_TIME" => "1209600",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"COMPONENT_TEMPLATE" => "store_v3_bottom",
+		"DELAY" => "N",
+		"ALLOW_MULTI_SELECT" => "N"
+	),
+	false,
+	array(
+		"ACTIVE_COMPONENT" => "Y"
+	)
+); ?>
                     <div class="col-md-12">
                         <h3 class="footer-heading mb-4">Navigations</h3>
                     </div>
@@ -37,27 +68,37 @@
             </div>
 
             <div class="col-lg-4 mb-5 mb-lg-0">
-                <h3 class="footer-heading mb-4">Follow Us</h3>
-
-                <div>
-                    <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                    <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                    <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                    <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-                </div>
-
-
+                <? $APPLICATION->IncludeComponent(
+                    "bitrix:main.include",
+                    ".default",
+                    array(
+                        "AREA_FILE_RECURSIVE" => "Y",
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => SITE_TEMPLATE_PATH . "/include/sociallinks_footer.php",
+                        "EDIT_TEMPLATE" => "",
+                        "COMPONENT_TEMPLATE" => ".default"
+                    ),
+                    false
+                ); ?>
 
             </div>
 
         </div>
         <div class="row pt-5 mt-5 text-center">
             <div class="col-md-12">
-                <p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;</script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
+                <? $APPLICATION->IncludeComponent(
+                    "bitrix:main.include",
+                    ".default",
+                    array(
+                        "AREA_FILE_RECURSIVE" => "Y",
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => SITE_TEMPLATE_PATH . "/include/text_footer.php",
+                        "EDIT_TEMPLATE" => "",
+                        "COMPONENT_TEMPLATE" => ".default"
+                    ),
+                    false
+                ); ?>
+
             </div>
 
         </div>
@@ -66,7 +107,9 @@
 
 </div>
 <?
+
 use Bitrix\Main\Page\Asset;
+
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-3.3.1.min.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-migrate-3.0.1.min.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-ui.js');
