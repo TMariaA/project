@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 //$APPLICATION->SetTitle("Мебельная компания");
 ?><?
 global $arrFilter;
-$arrFilter = array("PROPERTY_PRIORITY_VALUE" => "yes");
+$arrFilter = array("PROPERTY_PREFERRED_DEAL_VALUE" => "yes");
 ?><?
 //баннер с приоритетными объявлениями
 $APPLICATION->IncludeComponent(
@@ -69,8 +69,7 @@ $APPLICATION->IncludeComponent(
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
                     <div class="feature d-flex align-items-start">
-                        <span class="icon mr-3 flaticon-house"></span>
-                        <div class="text">
+
                             <? $APPLICATION->IncludeComponent(
                                 "bitrix:main.include",
                                 ".default",
@@ -82,13 +81,12 @@ $APPLICATION->IncludeComponent(
                                     "PATH" => SITE_TEMPLATE_PATH . "/include/block1_main.php"
                                 )
                             ); ?>
-                        </div>
+
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
                     <div class="feature d-flex align-items-start">
-                        <span class="icon mr-3 flaticon-rent"></span>
-                        <div class="text">
+
                             <? $APPLICATION->IncludeComponent(
                                 "bitrix:main.include",
                                 ".default",
@@ -100,13 +98,11 @@ $APPLICATION->IncludeComponent(
                                     "PATH" => SITE_TEMPLATE_PATH . "/include/block2_main.php"
                                 )
                             ); ?>
-                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
                     <div class="feature d-flex align-items-start">
-                        <span class="icon mr-3 flaticon-location"></span>
-                        <div class="text">
+
                             <? $APPLICATION->IncludeComponent(
                                 "bitrix:main.include",
                                 ".default",
@@ -118,7 +114,7 @@ $APPLICATION->IncludeComponent(
                                     "PATH" => SITE_TEMPLATE_PATH . "/include/block3_main.php"
                                 )
                             ); ?>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -245,7 +241,7 @@ $APPLICATION->IncludeComponent(
             </div>
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="#"><img alt="Image" src=" /local/templates/home/images/img_4.jpg" class="img-fluid"></a>
+                    <a href="#"><img alt="Image" src=" <?=SITE_TEMPLATE_PATH?>/images/img_4.jpg" class="img-fluid"></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
                         <h2 class="h5 text-black mb-3"><a href="#">When To Sell &amp; How Much To Sell?</a></h2>
@@ -256,7 +252,7 @@ $APPLICATION->IncludeComponent(
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <a href="#"><img alt="Image" src="/local/templates/home/images/img_2.jpg" class="img-fluid"></a>
+                    <a href="#"><img alt="Image" src="<?=SITE_TEMPLATE_PATH?>/images/img_2.jpg" class="img-fluid"></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
                         <h2 class="h5 text-black mb-3"><a href="#">When To Sell &amp; How Much To Sell?</a></h2>
@@ -267,7 +263,7 @@ $APPLICATION->IncludeComponent(
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <a href="#"><img alt="Image" src="/local/templates/home/images/img_3.jpg" class="img-fluid"></a>
+                    <a href="#"><img alt="Image" src="<?=SITE_TEMPLATE_PATH?>/images/img_3.jpg" class="img-fluid"></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
                         <h2 class="h5 text-black mb-3"><a href="#">When To Sell &amp; How Much To Sell?</a></h2>
@@ -321,7 +317,7 @@ $APPLICATION->IncludeComponent(
                 <div class="nonloop-block-13 owl-carousel">
                     <div class="slide-item">
                         <div class="team-member text-center">
-                            <img alt="Image" src="/local/templates/home/images/person_1.jpg"
+                            <img alt="Image" src="<?=SITE_TEMPLATE_PATH?>/images/person_1.jpg"
                                  class="img-fluid mb-4 w-50 rounded-circle mx-auto">
                             <div class="text p-3">
                                 <h2 class="mb-2 font-weight-light text-black h4">Megan Smith</h2>
@@ -340,7 +336,7 @@ $APPLICATION->IncludeComponent(
                     </div>
                     <div class="slide-item">
                         <div class="team-member text-center">
-                            <img alt="Image" src="/local/templates/home/images/person_2.jpg"
+                            <img alt="Image" src="<?=SITE_TEMPLATE_PATH?>/images/person_2.jpg"
                                  class="img-fluid mb-4 w-50 rounded-circle mx-auto">
                             <div class="text p-3">
                                 <h2 class="mb-2 font-weight-light text-black h4">Brooke Cagle</h2>
@@ -359,7 +355,7 @@ $APPLICATION->IncludeComponent(
                     </div>
                     <div class="slide-item">
                         <div class="team-member text-center">
-                            <img alt="Image" src="/local/templates/home/images/person_3.jpg"
+                            <img alt="Image" src="<?=SITE_TEMPLATE_PATH?>/images/person_3.jpg"
                                  class="img-fluid mb-4 w-50 rounded-circle mx-auto">
                             <div class="text p-3">
                                 <h2 class="mb-2 font-weight-light text-black h4">Philip Martin</h2>
@@ -378,7 +374,7 @@ $APPLICATION->IncludeComponent(
                     </div>
                     <div class="slide-item">
                         <div class="team-member text-center">
-                            <img alt="Image" src="/local/templates/home/images/person_1.jpg"
+                            <img alt="Image" src="<?=SITE_TEMPLATE_PATH?>/images/person_1.jpg"
                                  class="img-fluid mb-4 w-50 rounded-circle mx-auto">
                             <div class="text p-3">
                                 <h2 class="mb-2 font-weight-light text-black h4">Megan Smith</h2>
@@ -397,7 +393,7 @@ $APPLICATION->IncludeComponent(
                     </div>
                     <div class="slide-item">
                         <div class="team-member text-center">
-                            <img alt="Image" src="/local/templates/home/images/person_2.jpg"
+                            <img alt="Image" src="<?=SITE_TEMPLATE_PATH?>/images/person_2.jpg"
                                  class="img-fluid mb-4 w-50 rounded-circle mx-auto">
                             <div class="text p-3">
                                 <h2 class="mb-2 font-weight-light text-black h4">Brooke Cagle</h2>
@@ -416,7 +412,7 @@ $APPLICATION->IncludeComponent(
                     </div>
                     <div class="slide-item">
                         <div class="team-member text-center">
-                            <img alt="Image" src="/local/templates/home/images/person_3.jpg"
+                            <img alt="Image" src="<?=SITE_TEMPLATE_PATH?>/images/person_3.jpg"
                                  class="img-fluid mb-4 w-50 rounded-circle mx-auto">
                             <div class="text p-3">
                                 <h2 class="mb-2 font-weight-light text-black h4">Philip Martin</h2>
@@ -435,7 +431,7 @@ $APPLICATION->IncludeComponent(
                     </div>
                     <div class="slide-item">
                         <div class="team-member text-center">
-                            <img alt="Image" src="/local/templates/home/images/person_1.jpg"
+                            <img alt="Image" src="<?=SITE_TEMPLATE_PATH?>/images/person_1.jpg"
                                  class="img-fluid mb-4 w-50 rounded-circle mx-auto">
                             <div class="text p-3">
                                 <h2 class="mb-2 font-weight-light text-black h4">Megan Smith</h2>
@@ -454,7 +450,7 @@ $APPLICATION->IncludeComponent(
                     </div>
                     <div class="slide-item">
                         <div class="team-member text-center">
-                            <img alt="Image" src="/local/templates/home/images/person_2.jpg"
+                            <img alt="Image" src="<?=SITE_TEMPLATE_PATH?>/images/person_2.jpg"
                                  class="img-fluid mb-4 w-50 rounded-circle mx-auto">
                             <div class="text p-3">
                                 <h2 class="mb-2 font-weight-light text-black h4">Brooke Cagle</h2>
@@ -473,7 +469,7 @@ $APPLICATION->IncludeComponent(
                     </div>
                     <div class="slide-item">
                         <div class="team-member text-center">
-                            <img alt="Image" src="/local/templates/home/images/person_3.jpg"
+                            <img alt="Image" src="<?=SITE_TEMPLATE_PATH?>/images/person_3.jpg"
                                  class="img-fluid mb-4 w-50 rounded-circle mx-auto">
                             <div class="text p-3">
                                 <h2 class="mb-2 font-weight-light text-black h4">Philip Martin</h2>

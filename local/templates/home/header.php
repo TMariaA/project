@@ -34,7 +34,7 @@ IncludeTemplateLangFile(__FILE__);
 </head>
 <body>
 <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
-<!--<div class="site-loader"></div>-->
+<div class="site-loader"></div>
 
 <div class="site-wrap">
 
