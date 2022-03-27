@@ -22,13 +22,6 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Новости", 
-		"/o-servise/novosti/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
 		"Личный кабинет продавца", 
 		"/lichnyy-kabinet-prodavtsa/", 
 		Array(), 
@@ -55,6 +48,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"CSite::InGroup(array(6))" 
+	),
+	Array(
+		"Новости", 
+		"/o-servise/novosti/", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>
