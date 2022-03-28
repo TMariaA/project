@@ -1,7 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-//$APPLICATION->SetTitle("Мебельная компания");
-?><?
+//$APPLICATION->SetTitle("Биржа недвижимости");
+?>
+<?$APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");?>
+<?
 global $arrFilter;
 $arrFilter = array("PROPERTY_PREFERRED_DEAL_VALUE" => "yes");
 ?><?
@@ -71,63 +73,58 @@ $APPLICATION->IncludeComponent(
     ),
     false
 ); ?>
-    <div class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
-                    <div class="feature d-flex align-items-start">
-
-                        <? $APPLICATION->IncludeComponent(
-                            "bitrix:main.include",
-                            ".default",
-                            array(
-                                "AREA_FILE_RECURSIVE" => "Y",
-                                "AREA_FILE_SHOW" => "file",
-                                "COMPONENT_TEMPLATE" => ".default",
-                                "EDIT_TEMPLATE" => "",
-                                "PATH" => SITE_TEMPLATE_PATH . "/include/block1_main.php"
-                            )
-                        ); ?>
-
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
-                    <div class="feature d-flex align-items-start">
-
-                        <? $APPLICATION->IncludeComponent(
-                            "bitrix:main.include",
-                            ".default",
-                            array(
-                                "AREA_FILE_RECURSIVE" => "Y",
-                                "AREA_FILE_SHOW" => "file",
-                                "COMPONENT_TEMPLATE" => ".default",
-                                "EDIT_TEMPLATE" => "",
-                                "PATH" => SITE_TEMPLATE_PATH . "/include/block2_main.php"
-                            )
-                        ); ?>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
-                    <div class="feature d-flex align-items-start">
-
-                        <? $APPLICATION->IncludeComponent(
-                            "bitrix:main.include",
-                            ".default",
-                            array(
-                                "AREA_FILE_RECURSIVE" => "Y",
-                                "AREA_FILE_SHOW" => "file",
-                                "COMPONENT_TEMPLATE" => ".default",
-                                "EDIT_TEMPLATE" => "",
-                                "PATH" => SITE_TEMPLATE_PATH . "/include/block3_main.php"
-                            )
-                        ); ?>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<?
+<div class="py-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+				<div class="feature d-flex align-items-start">
+					 <?$APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	".default",
+	Array(
+		"AREA_FILE_RECURSIVE" => "Y",
+		"AREA_FILE_SHOW" => "file",
+		"COMPONENT_TEMPLATE" => ".default",
+		"EDIT_TEMPLATE" => "",
+		"PATH" => SITE_TEMPLATE_PATH."/include/block1_main.php"
+	)
+);?>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+				<div class="feature d-flex align-items-start">
+					 <?$APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	".default",
+	Array(
+		"AREA_FILE_RECURSIVE" => "Y",
+		"AREA_FILE_SHOW" => "file",
+		"COMPONENT_TEMPLATE" => ".default",
+		"EDIT_TEMPLATE" => "",
+		"PATH" => SITE_TEMPLATE_PATH."/include/block2_main.php"
+	)
+);?>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+				<div class="feature d-flex align-items-start">
+					 <?$APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	".default",
+	Array(
+		"AREA_FILE_RECURSIVE" => "Y",
+		"AREA_FILE_SHOW" => "file",
+		"COMPONENT_TEMPLATE" => ".default",
+		"EDIT_TEMPLATE" => "",
+		"PATH" => SITE_TEMPLATE_PATH."/include/block3_main.php"
+	)
+);?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ <?
 //последние объявления 9 шт
 $APPLICATION->IncludeComponent(
     "bitrix:news.line",
@@ -159,8 +156,7 @@ $APPLICATION->IncludeComponent(
         "SORT_ORDER2" => "ASC"
     ),
     false
-); ?>
-<?
+); ?> <?
 //услуги(сервисы)
 $APPLICATION->IncludeComponent(
     "bitrix:news.line",
@@ -187,9 +183,7 @@ $APPLICATION->IncludeComponent(
         "SORT_ORDER2" => "ASC"
     ),
     false
-); ?>&nbsp;
-
-<?
+); ?>&nbsp; <?
 //последние новости
 $APPLICATION->IncludeComponent(
     "bitrix:news.line",
@@ -219,39 +213,24 @@ $APPLICATION->IncludeComponent(
         "ACTIVE_DATE_FORMAT" => "d.m.Y"
     ),
     false
-); ?>
-
-<? $APPLICATION->IncludeComponent(
-    "bitrix:news.line",
-    "agents_main",
-    array(
-        "ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "CACHE_GROUPS" => "N",
-        "CACHE_TIME" => "1209600",
-        "CACHE_TYPE" => "A",
-        "DETAIL_URL" => "",
-        "FIELD_CODE" => array(
-            0 => "NAME",
-            1 => "PREVIEW_TEXT",
-            2 => "PREVIEW_PICTURE",
-            3 => "PROPERTY_POSITION",
-            4 => "PROPERTY_LINK_LINKEDIN",
-            5 => "PROPERTY_LINK_FACEBOOK",
-            6 => "PROPERTY_LINK_TWITTER",
-            7 => "",
-        ),
-        "IBLOCKS" => array(
-            0 => "7",
-        ),
-        "IBLOCK_TYPE" => "agents",
-        "NEWS_COUNT" => "20",
-        "SORT_BY1" => "ACTIVE_FROM",
-        "SORT_BY2" => "SORT",
-        "SORT_ORDER1" => "DESC",
-        "SORT_ORDER2" => "ASC",
-        "COMPONENT_TEMPLATE" => "agents_main"
-    ),
-    false
-); ?><br>
-
-    <br><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+); ?> <?$APPLICATION->IncludeComponent(
+	"bitrix:news.line",
+	"agents_main",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"CACHE_GROUPS" => "N",
+		"CACHE_TIME" => "1209600",
+		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => "agents_main",
+		"DETAIL_URL" => "",
+		"FIELD_CODE" => array(0=>"NAME",1=>"PREVIEW_TEXT",2=>"PREVIEW_PICTURE",3=>"PROPERTY_POSITION",4=>"PROPERTY_LINK_LINKEDIN",5=>"PROPERTY_LINK_FACEBOOK",6=>"PROPERTY_LINK_TWITTER",7=>"",),
+		"IBLOCKS" => array(0=>"7",),
+		"IBLOCK_TYPE" => "agents",
+		"NEWS_COUNT" => "20",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC"
+	)
+);?><br>
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

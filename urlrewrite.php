@@ -8,7 +8,7 @@ $arUrlRewrite=array (
     'PATH' => '/lichnyy-kabinet-prodavtsa/moi-obyavleniya/index.php',
     'SORT' => 100,
   ),
-  8 => 
+  13 => 
   array (
     'CONDITION' => '#^/o-servise/vakansii/#',
     'RULE' => '',
@@ -16,7 +16,7 @@ $arUrlRewrite=array (
     'PATH' => '/o-servise/vakansii/index.php',
     'SORT' => 100,
   ),
-  11 => 
+  14 => 
   array (
     'CONDITION' => '#^/o-servise/novosti/#',
     'RULE' => '',
@@ -24,7 +24,7 @@ $arUrlRewrite=array (
     'PATH' => '/o-servise/novosti/index.php',
     'SORT' => 100,
   ),
-  6 => 
+  15 => 
   array (
     'CONDITION' => '#^/obyavleniya/#',
     'RULE' => '',
