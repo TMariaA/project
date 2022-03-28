@@ -3,6 +3,9 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 //$APPLICATION->SetTitle("Биржа недвижимости");
 ?>
 <?$APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");?>
+<? use \Bitrix\Main\Localization\Loc;
+
+Loc::loadLanguageFile(__FILE__); ?>
 <?
 global $arrFilter;
 $arrFilter = array("PROPERTY_PREFERRED_DEAL_VALUE" => "yes");

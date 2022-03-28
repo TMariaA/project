@@ -22,39 +22,18 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Личный кабинет продавца", 
+		"ЛК продавца", 
 		"/lichnyy-kabinet-prodavtsa/", 
 		Array(), 
 		Array(), 
 		"CSite::InGroup(array(7))" 
 	),
 	Array(
-		"Мои объявления", 
-		"/lichnyy-kabinet-prodavtsa/moi-obyavleniya/", 
-		Array(), 
-		Array(), 
-		"CSite::InGroup(array(7))" 
-	),
-	Array(
-		"Личный кабинет покупателя", 
+		"ЛК покупателя", 
 		"/lichnyy-kabinet-pokupatelya/", 
 		Array(), 
 		Array(), 
 		"CSite::InGroup(array(6))" 
-	),
-	Array(
-		"Избранное", 
-		"/lichnyy-kabinet-pokupatelya/izbrannoe/", 
-		Array(), 
-		Array(), 
-		"CSite::InGroup(array(6))" 
-	),
-	Array(
-		"Новости", 
-		"/o-servise/novosti/", 
-		Array(), 
-		Array(), 
-		"" 
 	)
 );
 ?>

@@ -1,3 +1,4 @@
 #ignore bitrix/  and uploads/
-bitrix/
+bitrix/*
+!local/templates/home/components/
 upload/

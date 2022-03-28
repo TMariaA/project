@@ -34,6 +34,9 @@ IncludeTemplateLangFile(__FILE__);
 </head>
 <body>
 <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
+<? use \Bitrix\Main\Localization\Loc;
+
+Loc::loadLanguageFile(__FILE__); ?>
 <div class="site-loader"></div>
 
 <div class="site-wrap">

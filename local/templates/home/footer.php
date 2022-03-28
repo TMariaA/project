@@ -25,7 +25,7 @@
 	"bitrix:menu", 
 	"bottom_menu", 
 	array(
-		"ROOT_MENU_TYPE" => "bottom",
+		"ROOT_MENU_TYPE" => "top",
 		"MAX_LEVEL" => "1",
 		"CHILD_MENU_TYPE" => "left",
 		"USE_EXT" => "Y",
