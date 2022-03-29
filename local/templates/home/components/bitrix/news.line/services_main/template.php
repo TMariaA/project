@@ -12,15 +12,15 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<? use \Bitrix\Main\Localization\Loc;
+
+Loc::loadLanguageFile(__FILE__); ?>
 <div class="site-section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-7 text-center mb-5">
                 <div class="site-section-title">
-                    <h2><? use \Bitrix\Main\Localization\Loc;
-
-                        Loc::loadLanguageFile(__FILE__);
-                        echo Loc::getMessage("SERVICES_MAIN"); ?></h2>
+                    <h2> <?= Loc::getMessage("SERVICES_MAIN"); ?></h2>
                 </div>
             </div>
         </div>
@@ -30,7 +30,6 @@ $this->setFrameMode(true);
                 $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
                 $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
                 ?>
-
                 <div class="col-md-6 col-lg-4 mb-4" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
                     <a href="<?= $arItem["PROPERTY_LINKS_SERVICES_VALUE"] ?>"
                        class="service text-center border rounded">

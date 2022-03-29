@@ -130,35 +130,45 @@ $APPLICATION->IncludeComponent(
  <?
 //последние объявления 9 шт
 $APPLICATION->IncludeComponent(
-    "bitrix:news.line",
-    "last_ads",
-    array(
-        "ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "CACHE_GROUPS" => "N",
-        "CACHE_TIME" => "3600",
-        "CACHE_TYPE" => "A",
-        "COMPONENT_TEMPLATE" => "last_ads",
-        "DETAIL_URL" => "#SITE_DIR#/obyavleniya/#ELEMENT_CODE#.html",
-        "FIELD_CODE" => array(
-            0 => "NAME",
-            1 => "PREVIEW_TEXT",
-            2 => "PREVIEW_PICTURE",
-            3 => "PROPERTY_PRICE",
-            4 => "PROPERTY_FLOORS",
-            5 => "PROPERTY_AREA",
-            6 => "PROPERTY_BATHROOMS",
-            7 => "PROPERTY_GARAGE_VALUE",
-            8 => "",
-        ),
-        "IBLOCKS" => array(),
-        "IBLOCK_TYPE" => "ads",
-        "NEWS_COUNT" => "9",
-        "SORT_BY1" => "ACTIVE_FROM",
-        "SORT_BY2" => "SORT",
-        "SORT_ORDER1" => "DESC",
-        "SORT_ORDER2" => "ASC"
-    ),
-    false
+	"bitrix:news.line", 
+	"last_ads", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"CACHE_GROUPS" => "N",
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => "last_ads",
+		"DETAIL_URL" => "#SITE_DIR#/obyavleniya/#ELEMENT_CODE#.html",
+		"FIELD_CODE" => array(
+			0 => "ID",
+			1 => "CODE",
+			2 => "NAME",
+			3 => "PREVIEW_TEXT",
+			4 => "PREVIEW_PICTURE",
+			5 => "DETAIL_TEXT",
+			6 => "DETAIL_PICTURE",
+			7 => "DATE_ACTIVE_FROM",
+			8 => "ACTIVE_FROM",
+			9 => "SHOW_COUNTER",
+			10 => "IBLOCK_ID",
+			11 => "CREATED_USER_NAME",
+			12 => "PROPERTY_PRICE",
+			13 => "PROPERTY_FLOORS",
+			14 => "PROPERTY_AREA",
+			15 => "PROPERTY_BATHROOMS",
+			16 => "PROPERTY_GARAGE_VALUE",
+			17 => "",
+		),
+		"IBLOCKS" => array(
+		),
+		"IBLOCK_TYPE" => "ads",
+		"NEWS_COUNT" => "9",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC"
+	),
+	false
 ); ?> <?
 //услуги(сервисы)
 $APPLICATION->IncludeComponent(

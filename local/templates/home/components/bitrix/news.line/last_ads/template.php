@@ -12,16 +12,14 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-
+<? use \Bitrix\Main\Localization\Loc;
+Loc::loadLanguageFile(__FILE__);?>
 <div class="site-section site-section-sm bg-light">
     <div class="container">
         <div class="row mb-5">
             <div class="col-12">
                 <div class="site-section-title">
-                    <h2><? use \Bitrix\Main\Localization\Loc;
-
-                        Loc::loadLanguageFile(__FILE__);
-                        echo Loc::getMessage("LAST_ADS_MAIN"); ?></h2>
+                    <h2><?= Loc::getMessage("LAST_ADS_MAIN"); ?></h2>
                 </div>
             </div>
         </div>
