@@ -12,9 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<? use \Bitrix\Main\Localization\Loc;
-
-Loc::loadLanguageFile(__FILE__); ?>
+<? use \Bitrix\Main\Localization\Loc; ?>
 <? if ($arParams["DISPLAY_PICTURE"] != "N" && is_array($arResult["DETAIL_PICTURE"])): ?>
 <div class="site-blocks-cover overlay" style="background-image: url(<?= $arResult["DETAIL_PICTURE"]["SRC"] ?>);"
      data-aos="fade" data-stellar-background-ratio="0.5">
@@ -38,9 +36,15 @@ Loc::loadLanguageFile(__FILE__); ?>
             <div class="col-lg-8" style="margin-top: -150px;">
                 <div class="mb-5">
                     <div class="slide-one-item home-slider owl-carousel">
-                        <? foreach ($arResult["DISPLAY_PROPERTIES"]['IMAGE_GALLERY']['FILE_VALUE'] as $pid => $arProperty): ?>
-                            <div><img src=" <?= $arProperty['SRC']; ?>" class="img-fluid"></div>
-                        <? endforeach ?>
+
+                        <? if (count($arResult["DISPLAY_PROPERTIES"]["IMAGE_GALLERY"]["FILE_VALUE"]["SRC"]) == 1): ?>
+                            <div><img src="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGE_GALLERY"]["FILE_VALUE"]["SRC"] ?>"
+                                      class="img-fluid"></div>
+                        <? else: ?>
+                            <? foreach ($arResult["DISPLAY_PROPERTIES"]['IMAGE_GALLERY']['FILE_VALUE'] as $pid => $arProperty): ?>
+                                <div><img src=" <?= $arProperty['SRC']; ?>" class="img-fluid"></div>
+                            <? endforeach ?>
+                        <? endif ?>
 
                     </div>
                 </div>
@@ -86,13 +90,26 @@ Loc::loadLanguageFile(__FILE__); ?>
                         <div class="col-12">
                             <h2 class="h4 text-black mb-3"><?= Loc::getMessage("DETAIL_NEWS_PHOTOGALLERY"); ?></h2>
                         </div>
-                        <? foreach ($arResult["DISPLAY_PROPERTIES"]['IMAGE_GALLERY']['FILE_VALUE'] as $pid => $arProperty): ?>
+                        <? if (count($arResult["DISPLAY_PROPERTIES"]["IMAGE_GALLERY"]["FILE_VALUE"]["SRC"]) == 1): ?>
+
                             <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                                <a href=" <?= $arProperty['SRC']; ?>" class="image-popup gal-item"><img
-                                            src="<?= $arProperty['SRC']; ?>" alt="<?= $arProperty['ORIGINAL_NAME']; ?>"
+                                <a href="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGE_GALLERY"]["FILE_VALUE"]["SRC"] ?>"
+                                   class="image-popup gal-item"><img
+                                            src="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGE_GALLERY"]["FILE_VALUE"]["SRC"] ?>"
+                                            alt="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGE_GALLERY"]["FILE_VALUE"]["ORIGINAL_NAME"]; ?>"
                                             class="img-fluid"></a>
                             </div>
-                        <? endforeach ?>
+
+                        <? else: ?>
+                            <? foreach ($arResult["DISPLAY_PROPERTIES"]['IMAGE_GALLERY']['FILE_VALUE'] as $pid => $arProperty): ?>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                                    <a href=" <?= $arProperty['SRC']; ?>" class="image-popup gal-item"><img
+                                                src="<?= $arProperty['SRC']; ?>"
+                                                alt="<?= $arProperty['ORIGINAL_NAME']; ?>"
+                                                class="img-fluid"></a>
+                                </div>
+                            <? endforeach ?>
+                        <? endif; ?>
 
                     </div>
                     <div class="row mb-5">
@@ -108,12 +125,18 @@ Loc::loadLanguageFile(__FILE__); ?>
                         <div class="col-md-6 col-lg-6 text-left border-bottom border-top py-3">
                             <span class="d-inline-block text-black mb-0 caption-text"><?= Loc::getMessage("DETAIL_NEWS_ADDITIONAL_MATERIALS"); ?></span>
 
-                            <? foreach ($arResult["DISPLAY_PROPERTIES"]['ADDITIONAL_MATERIALS']['FILE_VALUE'] as $pid => $arProperty): ?>
+                            <? if (count($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"]["SRC"]) == 1): ?>
+                                <a href="<?= $arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"]["SRC"] ?>"" download="">
+                                <strong
+                                        class="d-block"><?= $arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"]["ORIGINAL_NAME"]; ?></strong></a>
+                            <? else: ?>
+                                <? foreach ($arResult["DISPLAY_PROPERTIES"]['ADDITIONAL_MATERIALS']['FILE_VALUE'] as $pid => $arProperty): ?>
 
-                                <a href=" <?= $arProperty['SRC']; ?>" download=""><strong
-                                            class="d-block"><?= $arProperty['ORIGINAL_NAME']; ?></strong></a>
+                                    <a href=" <?= $arProperty['SRC']; ?>" download=""><strong
+                                                class="d-block"><?= $arProperty['ORIGINAL_NAME']; ?></strong></a>
 
-                            <? endforeach ?>
+                                <? endforeach ?>
+                            <? endif; ?>
                         </div>
                     </div>
                 </div>

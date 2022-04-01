@@ -12,9 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<? use \Bitrix\Main\Localization\Loc;
-
-Loc::loadLanguageFile(__FILE__); ?>
+<? use \Bitrix\Main\Localization\Loc; ?>
 <div class="site-section site-section-sm bg-light">
     <div class="container">
         <div class="row mb-5">
