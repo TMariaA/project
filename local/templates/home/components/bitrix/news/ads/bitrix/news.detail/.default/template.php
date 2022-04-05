@@ -141,6 +141,8 @@ $this->setFrameMode(true);
                     </div>
                 </div>
             </div>
+
+            <? if (CSite::InDir('/lichnyy-kabinet-prodavtsa/moi-obyavleniya/') !=1): ?>
             <div class="col-lg-4 pl-md-5">
 
                 <div class="bg-white widget border rounded">
@@ -173,6 +175,7 @@ $this->setFrameMode(true);
                 </div>
 
             </div>
+            <? endif; ?>
 
         </div>
     </div>

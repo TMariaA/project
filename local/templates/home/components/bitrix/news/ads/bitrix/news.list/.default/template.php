@@ -1,4 +1,4 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -18,61 +18,74 @@ $this->setFrameMode(true);
         <div class="row mb-5">
             <div class="col-12">
                 <div class="site-section-title">
-                    <h2><?= Loc::getMessage("ADS_TITLE"); ?></h2>
+
+                    <? if ($APPLICATION->GetCurPage(false) !== '/lichnyy-kabinet-prodavtsa/moi-obyavleniya/'): ?>
+
+                        <h2><?= Loc::getMessage("ADS_TITLE"); ?></h2>
+                        
+                    <? else: ?>
+
+                        <h2><?= Loc::getMessage("MY_ADS_TITLE"); ?></h2>
+
+                    <? endif; ?>
+
+
                 </div>
             </div>
         </div>
         <div class="row mb-5">
-<?foreach($arResult["ITEMS"] as $arItem):?>
-	<?
-	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-	?>
-        <div class="col-md-6 col-lg-4 mb-4" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+            <? foreach ($arResult["ITEMS"] as $arItem): ?>
+                <?
+                $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+                $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+                ?>
+                <div class="col-md-6 col-lg-4 mb-4" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 
-            <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="prop-entry d-block">
-                <figure>
-                    <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" class="img-fluid">
-                </figure>
-                <div class="prop-text">
-                    <div class="inner">
-                        <span class="price rounded">$<?= $arItem["DISPLAY_PROPERTIES"]["PRICE"]["VALUE"] ?></span>
-                        <h3 class="title"><?= $arItem["NAME"]?></h3>
-                        <p class="location"><?= $arItem["PREVIEW_TEXT"]?></p>
-                    </div>
-                    <div class="prop-more-info">
-                        <div class="inner d-flex">
-                            <div class="col">
-                                <span>Area:</span>
-                                <strong><?= $arItem["DISPLAY_PROPERTIES"]["AREA"]["VALUE"] ?>m<sup>2</sup></strong>
+                    <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="prop-entry d-block">
+                        <figure>
+                            <img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>"
+                                 alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="img-fluid">
+                        </figure>
+                        <div class="prop-text">
+                            <div class="inner">
+                                <span class="price rounded">$<?= $arItem["DISPLAY_PROPERTIES"]["PRICE"]["VALUE"] ?></span>
+                                <h3 class="title"><?= $arItem["NAME"] ?></h3>
+                                <p class="location"><?= $arItem["PREVIEW_TEXT"] ?></p>
                             </div>
-                            <div class="col">
-                                <span>Beds:</span>
-                                <strong><?= $arItem["DISPLAY_PROPERTIES"]["FLOORS"]["VALUE"] ?></strong>
-                            </div>
-                            <div class="col">
-                                <span>Baths:</span>
-                                <strong><?= $arItem["DISPLAY_PROPERTIES"]["BATHROOMS"]["VALUE"] ?></strong>
-                            </div>
-                            <div class="col">
-                                <span>Garages:</span>
-                                <strong><?= $arItem["DISPLAY_PROPERTIES"]["GARAGE"]["VALUE"] ?></strong>
+                            <div class="prop-more-info">
+                                <div class="inner d-flex">
+                                    <div class="col">
+                                        <span>Area:</span>
+                                        <strong><?= $arItem["DISPLAY_PROPERTIES"]["AREA"]["VALUE"] ?>
+                                            m<sup>2</sup></strong>
+                                    </div>
+                                    <div class="col">
+                                        <span>Beds:</span>
+                                        <strong><?= $arItem["DISPLAY_PROPERTIES"]["FLOORS"]["VALUE"] ?></strong>
+                                    </div>
+                                    <div class="col">
+                                        <span>Baths:</span>
+                                        <strong><?= $arItem["DISPLAY_PROPERTIES"]["BATHROOMS"]["VALUE"] ?></strong>
+                                    </div>
+                                    <div class="col">
+                                        <span>Garages:</span>
+                                        <strong><?= $arItem["DISPLAY_PROPERTIES"]["GARAGE"]["VALUE"] ?></strong>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
+
                 </div>
-            </a>
+            <? endforeach; ?>
 
         </div>
-<?endforeach;?>
-
-</div>
         <div class="row">
             <div class="col-md-12 text-center">
-        <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
-            <br /><?=$arResult["NAV_STRING"]?>
-        <?endif;?>
+                <? if ($arParams["DISPLAY_BOTTOM_PAGER"]): ?>
+                    <br/><?= $arResult["NAV_STRING"] ?>
+                <? endif; ?>
             </div>
         </div>
-</div>
+    </div>
 </div>

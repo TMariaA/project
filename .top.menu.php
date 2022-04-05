@@ -26,7 +26,7 @@ $aMenuLinks = Array(
 		"/lichnyy-kabinet-prodavtsa/", 
 		Array(), 
 		Array(), 
-		"CSite::InGroup(array(7))" 
+		"CSite::InGroup(array(1,7))" 
 	),
 	Array(
 		"ЛК покупателя", 

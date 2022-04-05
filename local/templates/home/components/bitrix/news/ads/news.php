@@ -32,7 +32,7 @@ $this->setFrameMode(true);
 );?>
 <br />
 <?endif?>
-<?if($arParams["USE_FILTER"]=="Y"):?>
+<?if(($arParams["USE_FILTER"]=="Y") and ($APPLICATION->GetCurPage(false) !== '/lichnyy-kabinet-prodavtsa/moi-obyavleniya/')):?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.filter",
 	"",
