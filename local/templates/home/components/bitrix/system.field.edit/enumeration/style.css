@@ -1,0 +1,27 @@
+.form_radio_btn {
+    display: inline-block;
+    margin-right: 10px;
+}
+.form_radio_btn input[type=radio] {
+    display: none;
+}
+.form_radio_btn label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0px 15px;
+    line-height: 34px;
+    border: 1px solid #999;
+    user-select: none;
+}
+
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+    background: #f89d13;
+    color:white;
+    border: 1px solid #f89d13;
+}
+
+/* Hover */
+.form_radio_btn label:hover {
+    background: #ffe0a6;
+}

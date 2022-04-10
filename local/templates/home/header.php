@@ -84,6 +84,8 @@ Loc::loadLanguageFile(__FILE__); ?>
                     </p>
                 </div>
                 <div class="col-6 col-md-6 text-right">
+
+                    <a href="/login/" class="mr-3 font-weight-bold"><?=Loc::getMessage("AUTH_LINK"); ?></a>
                     <? $APPLICATION->IncludeComponent(
                         "bitrix:main.include",
                         ".default",
