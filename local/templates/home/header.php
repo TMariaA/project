@@ -83,9 +83,18 @@ Loc::loadLanguageFile(__FILE__); ?>
                                 ); ?></span></a>
                     </p>
                 </div>
-                <div class="col-6 col-md-6 text-right">
+                <div class="col-6 col-md-6 text-right" style="    display: flex;
+    justify-content: flex-end; align-items: center; height: 40px;">
 
-                    <a href="/login/" class="mr-3 font-weight-bold"><?=Loc::getMessage("AUTH_LINK"); ?></a>
+                    <? $APPLICATION->IncludeComponent("bitrix:system.auth.form", "authheader", array(
+                        "FORGOT_PASSWORD_URL" => "/login/index.php?forgot_password=yes",    // Страница забытого пароля
+                        "PROFILE_URL" => "",    // Страница профиля
+                        "REGISTER_URL" => "/login/registration.php",    // Страница регистрации
+                        "SHOW_ERRORS" => "Y",    // Показывать ошибки
+                        "COMPONENT_TEMPLATE" => "auth"
+                    ),
+                        false
+                    ); ?>
                     <? $APPLICATION->IncludeComponent(
                         "bitrix:main.include",
                         ".default",
@@ -147,15 +156,15 @@ Loc::loadLanguageFile(__FILE__); ?>
     </div>
 </div>
 
-                <? $APPLICATION->IncludeComponent(
-	"bitrix:breadcrumb", 
-	"breadcrumb_s1", 
-	array(
-		"COMPONENT_TEMPLATE" => "breadcrumb_s1",
-		"START_FROM" => "0",
-		"PATH" => "",
-		"SITE_ID" => "s1"
-	),
-	false
+<? $APPLICATION->IncludeComponent(
+    "bitrix:breadcrumb",
+    "breadcrumb_s1",
+    array(
+        "COMPONENT_TEMPLATE" => "breadcrumb_s1",
+        "START_FROM" => "0",
+        "PATH" => "",
+        "SITE_ID" => "s1"
+    ),
+    false
 ); ?>
 

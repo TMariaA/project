@@ -1,7 +1,10 @@
 <?
-AddEventHandler("main", "OnAfterUserAdd", array("MyClass","OnAfterUserAddHandler"));
-class MyClass
+AddEventHandler("main", "OnAfterUserAdd", array("AssignmentGroupUsers","OnAfterUserAddHandler"));
+class AssignmentGroupUsers
 {
+
+    const  GROUP_VENDOR = 7;
+    const GROUP_BUYER = 6;
     function OnAfterUserAddHandler(&$arFields)
     {
 
@@ -9,11 +12,11 @@ class MyClass
             if ($arFields["UF_REG_GROUP_USER"] == "1")
             {
                 $arGroups = CUser::GetUserGroup($arFields["ID"]);
-                $arGroups[] = 7;
+                $arGroups[] = self::GROUP_VENDOR;
                 CUser::SetUserGroup($arFields["ID"], $arGroups);
             } elseif ($arFields["UF_REG_GROUP_USER"] == "2") {
                 $arGroups = CUser::GetUserGroup($arFields["ID"]);
-                $arGroups[] = 6;
+                $arGroups[] = self::GROUP_BUYER;
                 CUser::SetUserGroup($arFields["ID"], $arGroups);
             }
         }

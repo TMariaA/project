@@ -166,84 +166,85 @@ if ($arResult["SHOW_SMS_FIELD"] == true) {
                         <div class="col-md-12">
                             <p class="font-weight-bold"><?= GetMessage("REGISTER_FIELD_" . $FIELD) ?>
                                 :<? if ($arResult["REQUIRED_FIELDS_FLAGS"][$FIELD] == "Y"): ?><span
-                                        class="starrequired">*</span><? endif ?></p>
-                            <div><?
+                                        class="starrequired">*</span><? endif ?>
+                                <?
                                 switch ($FIELD) {
-                                    case "PASSWORD":
-                                        ?><input size="30" type="password" name="REGISTER[<?= $FIELD ?>]"
-                                                 value="<?= $arResult["VALUES"][$FIELD] ?>" autocomplete="off"
-                                                 class="form-control"/>
-                                    <? if ($arResult["SECURE_AUTH"]): ?>
-                                        <span class="bx-auth-secure" id="bx_auth_secure"
-                                              title="<? echo GetMessage("AUTH_SECURE_NOTE") ?>" style="display:none">
-					<div class="bx-auth-secure-icon"></div>
-				</span>
-                                        <noscript>
+                                case "PASSWORD":
+                                ?><input size="30" type="password" name="REGISTER[<?= $FIELD ?>]"
+                                         value="<?= $arResult["VALUES"][$FIELD] ?>" autocomplete="off"
+                                         class="form-control"/>
+                                <? if ($arResult["SECURE_AUTH"]): ?>
+                                <span class="bx-auth-secure" id="bx_auth_secure"
+                                      title="<? echo GetMessage("AUTH_SECURE_NOTE") ?>" style="display:none">
+                            <div class="bx-auth-secure-icon"></div>
+                            </span>
+                            <noscript>
 				<span class="bx-auth-secure" title="<? echo GetMessage("AUTH_NONSECURE_NOTE") ?>">
 					<div class="bx-auth-secure-icon bx-auth-secure-unlock"></div>
 				</span>
-                                        </noscript>
-                                        <script type="text/javascript">
-                                            document.getElementById('bx_auth_secure').style.display = 'inline-block';
-                                        </script>
-                                    <? endif ?>
-                                        <?
-                                        break;
-                                    case "CONFIRM_PASSWORD":
-                                        ?><input size="30" class="form-control" type="password"
-                                                 name="REGISTER[<?= $FIELD ?>]"
-                                                 value="<?= $arResult["VALUES"][$FIELD] ?>" autocomplete="off" /><?
-                                        break;
-
-                                    case "PERSONAL_GENDER":
-                                        ?><select name="REGISTER[<?= $FIELD ?>]">
-                                        <option value=""><?= GetMessage("USER_DONT_KNOW") ?></option>
-                                        <option value="M"<?= $arResult["VALUES"][$FIELD] == "M" ? " selected=\"selected\"" : "" ?>><?= GetMessage("USER_MALE") ?></option>
-                                        <option value="F"<?= $arResult["VALUES"][$FIELD] == "F" ? " selected=\"selected\"" : "" ?>><?= GetMessage("USER_FEMALE") ?></option>
-                                        </select><?
-                                        break;
-
-                                    case "PERSONAL_COUNTRY":
-                                    case "WORK_COUNTRY":
-                                        ?><select name="REGISTER[<?= $FIELD ?>]"><?
-                                        foreach ($arResult["COUNTRIES"]["reference_id"] as $key => $value) {
-                                            ?>
-                                            <option value="<?= $value ?>"<? if ($value == $arResult["VALUES"][$FIELD]): ?> selected="selected"<? endif ?>><?= $arResult["COUNTRIES"]["reference"][$key] ?></option>
-                                            <?
-                                        }
-                                        ?></select><?
-                                        break;
-
-                                    case "PERSONAL_PHOTO":
-                                    case "WORK_LOGO":
-                                        ?><input size="30" type="file" name="REGISTER_FILES_<?= $FIELD ?>" /><?
-                                        break;
-
-                                    case "PERSONAL_NOTES":
-                                case "WORK_NOTES":
-                                    ?><textarea cols="30" rows="5"
-                                                name="REGISTER[<?= $FIELD ?>]"><?= $arResult["VALUES"][$FIELD] ?></textarea><?
+                            </noscript>
+                            <script type="text/javascript">
+                                document.getElementById('bx_auth_secure').style.display = 'inline-block';
+                            </script>
+                            <? endif ?>
+                            <?
+                            break;
+                            case "CONFIRM_PASSWORD":
+                                ?><input size="30" class="form-control" type="password"
+                                         name="REGISTER[<?= $FIELD ?>]"
+                                         value="<?= $arResult["VALUES"][$FIELD] ?>" autocomplete="off" /><?
                                 break;
-                                default:
+
+                            case "PERSONAL_GENDER":
+                                ?><select name="REGISTER[<?= $FIELD ?>]">
+                                <option value=""><?= GetMessage("USER_DONT_KNOW") ?></option>
+                                <option value="M"<?= $arResult["VALUES"][$FIELD] == "M" ? " selected=\"selected\"" : "" ?>><?= GetMessage("USER_MALE") ?></option>
+                                <option value="F"<?= $arResult["VALUES"][$FIELD] == "F" ? " selected=\"selected\"" : "" ?>><?= GetMessage("USER_FEMALE") ?></option>
+                                </select><?
+                                break;
+
+                            case "PERSONAL_COUNTRY":
+                            case "WORK_COUNTRY":
+                                ?><select name="REGISTER[<?= $FIELD ?>]"><?
+                                foreach ($arResult["COUNTRIES"]["reference_id"] as $key => $value) {
+                                    ?>
+                                    <option value="<?= $value ?>"<? if ($value == $arResult["VALUES"][$FIELD]): ?> selected="selected"<? endif ?>><?= $arResult["COUNTRIES"]["reference"][$key] ?></option>
+                                    <?
+                                }
+                                ?></select><?
+                                break;
+
+                            case "PERSONAL_PHOTO":
+                            case "WORK_LOGO":
+                                ?><input size="30" type="file" name="REGISTER_FILES_<?= $FIELD ?>" /><?
+                                break;
+
+                            case "PERSONAL_NOTES":
+                            case "WORK_NOTES":
+                                ?><textarea cols="30" rows="5"
+                                            name="REGISTER[<?= $FIELD ?>]"><?= $arResult["VALUES"][$FIELD] ?></textarea><?
+                                break;
+                            default:
                                 if ($FIELD == "PERSONAL_BIRTHDAY"): ?>
                                     <small><?= $arResult["DATE_FORMAT"] ?></small><br/><?endif;
-                                    ?><input class="form-control" size="30" type="text" name="REGISTER[<?= $FIELD ?>]"
-                                             value="<?= $arResult["VALUES"][$FIELD] ?>" /><?
-                                    if ($FIELD == "PERSONAL_BIRTHDAY")
-                                        $APPLICATION->IncludeComponent(
-                                            'bitrix:main.calendar',
-                                            '',
-                                            array(
-                                                'SHOW_INPUT' => 'N',
-                                                'FORM_NAME' => 'regform',
-                                                'INPUT_NAME' => 'REGISTER[PERSONAL_BIRTHDAY]',
-                                                'SHOW_TIME' => 'N'
-                                            ),
-                                            null,
-                                            array("HIDE_ICONS" => "Y")
-                                        );
-                                    ?><?
-                                } ?></div>
+                                ?><input class="form-control" size="30" type="text" name="REGISTER[<?= $FIELD ?>]"
+                                         value="<?= $arResult["VALUES"][$FIELD] ?>" /><?
+                                if ($FIELD == "PERSONAL_BIRTHDAY")
+                                    $APPLICATION->IncludeComponent(
+                                        'bitrix:main.calendar',
+                                        '',
+                                        array(
+                                            'SHOW_INPUT' => 'N',
+                                            'FORM_NAME' => 'regform',
+                                            'INPUT_NAME' => 'REGISTER[PERSONAL_BIRTHDAY]',
+                                            'SHOW_TIME' => 'N'
+                                        ),
+                                        null,
+                                        array("HIDE_ICONS" => "Y")
+                                    );
+                                ?><?
+                            } ?>
+                            </p>
                         </div>
                     <? endif ?>
                 <? endforeach ?>
@@ -261,12 +262,14 @@ if ($arResult["SHOW_SMS_FIELD"] == true) {
                         <input type="hidden" name="captcha_sid" value="<?= $arResult["CAPTCHA_CODE"] ?>"/>
                         <img src="/bitrix/tools/captcha.php?captcha_sid=<?= $arResult["CAPTCHA_CODE"] ?>"
                              width="180" height="40" alt="CAPTCHA"/>
+                    </div>
 
-
+                    <div class="col-md-12">
+                        <br>
                         <p class="font-weight-bold"><?= GetMessage("REGISTER_CAPTCHA_PROMT") ?>:<span
-                                    class="font-weight-bold starrequired">*</span></p>
-                        <div><input type="text" name="captcha_word" class="form-control" size="30" maxlength="50"
-                                    value="" autocomplete="off"/></div>
+                                    class="font-weight-bold starrequired">*</span>
+                            <input type="text" name="captcha_word" class="form-control" size="30" maxlength="50"
+                                   value="" autocomplete="off"/></p>
 
                     </div>
                     <?
